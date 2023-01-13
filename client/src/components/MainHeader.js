@@ -10,6 +10,9 @@ return (
 <li>
     <NavLink activeClassName={classes.active} to ="/senators">Your State's Senators!</NavLink>
 </li>
+<li>
+    <NavLink activeClassName={classes.active} to ="/house">How much do you know about the House?!</NavLink>
+</li>
 
 
 </ul>

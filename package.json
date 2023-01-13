@@ -11,6 +11,8 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
+    "chart.js": "^4.1.2",
+    "react-chartjs-2": "^5.2.0",
     "react-router-dom": "^5.3.4"
   }
 }
