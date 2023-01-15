@@ -38,7 +38,7 @@ const handleState = (e) => {
 const handleSubmit = (e) => {
    e.preventDefault();
    setIsLoading(true);
-        fetch("/congress")
+        fetch("/senators")
         .then(response => {
             return response.json()})
             .then((congressData) => {
