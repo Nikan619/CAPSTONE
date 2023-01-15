@@ -32,7 +32,7 @@ const handleChangeanswer =(e) =>{
 e.preventDefault();
 const answerInt=  parseInt(answer)
 console.log(answerInt);
-if(answerInt === houseData.length)
+if(answerInt === 435)
 {
     setCorrect(!correct)
     
