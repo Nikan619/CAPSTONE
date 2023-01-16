@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   # Leave this here to help deploy your app later!
   get "/senators", to: "data#index"
 
-
+post "signup", to: "users#create"
+get "/me", to: "users#show"
+post "/login", to: "sessions#create"
+delete "/logout", to: "sessions#destroy"
 get "/house", to: "house#index"
 
   

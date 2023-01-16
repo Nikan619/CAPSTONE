@@ -4,7 +4,7 @@ import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 
 
-function Login({ onLogin }) {
+function Login({ setUser}) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
@@ -12,7 +12,8 @@ function Login({ onLogin }) {
       
       {showLogin ? (
         <>
-          <form onLogin={onLogin} />
+        <LoginForm setUser={setUser}/>
+          <form setUser={setUser} />
           <br />
           <p>
             Don't have an account? &nbsp;
@@ -23,7 +24,8 @@ function Login({ onLogin }) {
         </>
       ) : (
         <>
-          <form onLogin={onLogin} />
+        <SignUpForm setUser={setUser}/>
+          <form setUser={setUser} />
           <br />
           <p>
             Already have an account? &nbsp;
