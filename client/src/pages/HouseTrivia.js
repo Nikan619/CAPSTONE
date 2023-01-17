@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react'
 
 import HouseInfo from '../components/HouseInfo.js'
 
+import Search from "../components/Search.js"
 
 function HouseTrivia () {
 
@@ -81,10 +82,12 @@ const reverseCorrect = () => {setTimeout(()=> {
 <div>
     <br></br>
     <br></br>
+    <div><Search houseData={houseData} setHouseData={setHouseData}/></div>
 <button onClick={handleClick}>All House Members Here!</button>
+
 </div>
 
-      {newComponent && <HouseInfo houseData={houseData}/>}
+      {newComponent && <HouseInfo houseData={houseData} setHouseData={setHouseData}/>}
    
     
     </>

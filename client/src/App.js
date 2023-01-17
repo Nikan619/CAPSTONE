@@ -9,8 +9,8 @@ import { useEffect } from 'react';
 
 import {useState} from 'react'
 import Login from './pages/Login'
-
-
+import HouseMemberDetails from './components/HouseMemberDetails.js';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
 
@@ -28,19 +28,28 @@ useEffect(()=>{
 if(!user) return<Login setUser={setUser}/>
 
   return (
+    
+  
     <div className="App">
+   
    <MainHeader user={user} setUser={setUser} />
-      <h1> Hello</h1>
+      <h1> Hello from APP</h1>
       <main>
         <Route exact path = "/"></Route>
-<Route path = "/senators">
-      <Congress />
+<Route path = "/senators" >
+      <Congress  user={user}/>
       </Route>
-      <Route path = "/house">
-        <HouseTrivia />
+      <Route path = "/house" >
+        <HouseTrivia  user={user}/>
       </Route>
+      <Route path = "/memberdetails">
+        <HouseMemberDetails />
+      </Route>
+     
       </main>
     </div>
+   
+    
   );
 }
 

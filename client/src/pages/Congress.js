@@ -7,7 +7,9 @@ import SenatorDisplay from "../components/SenatorDisplay.js"
 import React, {useState} from 'react';
 
 
-function Congress() {
+function Congress({user}) {
+
+    console.log(user);
 
 
     const [stateSenators, setStateSenators] = useState([]);
@@ -59,6 +61,7 @@ const handleSubmit = (e) => {
 
         return (
             <>
+            <h1>Hello {user.username}</h1>
             <h1> Please enter some answers to your political preferences</h1>
             <div className="">
                 <form onSubmit ={handleSubmit} >

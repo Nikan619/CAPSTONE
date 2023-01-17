@@ -17,7 +17,7 @@ const MainHeader = ({user,setUser}) => {
 
 return (
 <header> 
-<nav>
+<nav className ="navbar navbar-dark bg-dark mb-5">
 <ul>
 
 <li>
