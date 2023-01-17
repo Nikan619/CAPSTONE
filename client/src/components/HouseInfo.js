@@ -6,17 +6,17 @@ import HouseMemberDetails from "./HouseMemberDetails.js";
 import {useState} from "react"
 
 
-import {useHistory} from 'react-router-dom';
+// import {useHistory} from 'react-router-dom';
 
 function HouseInfo({houseData,setHouseData}){
 
 
-    let history = useHistory();
+    // let history = useHistory();
 
     const [detailClick,setDetailClick] =useState(false)
 
     function handleClick() {
-       history.push("/memberdetails");
+    //    history.push("/memberdetails");
     }
 
 const mappedHouseData= () =>{return houseData.map((house)=>{

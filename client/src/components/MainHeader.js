@@ -1,7 +1,20 @@
 import {NavLink} from 'react-router-dom';
-import classes from './MainHeader.module.css';
+
+import styles from  "./MainHeader.module.css"
+
+
 
 const MainHeader = ({user,setUser}) => {
+
+//     const mystyle ={
+//         font: "inherit",
+// padding: "0.5rem 1.5rem",
+// border: "1px solid #8b005d",
+// color: "white",
+// background: "#8b005d",
+
+// cursor: "pointer"
+//   }
 
     function handleLogoutClick(){
         fetch("/logout",{method:"DELETE"}).then((r)=>{
@@ -12,21 +25,18 @@ const MainHeader = ({user,setUser}) => {
     }
 
 
-
-
-
 return (
 <header> 
-<nav className ="navbar navbar-dark bg-dark mb-5">
+<nav className ="NavBar">
 <ul>
 
 <li>
-    <NavLink activeClassName={classes.active} to ="/senators">Your State's Senators!</NavLink>
+    <NavLink  to ="/senators">Your State's Senators!</NavLink>
 </li>
 <li>
-    <NavLink activeClassName={classes.active} to ="/house">How much do you know about the House?!</NavLink>
+    <NavLink  to ="/house">How much do you know about the House?!</NavLink>
 </li>
-<button onClick={handleLogoutClick}>
+<button className={styles.button} onClick={handleLogoutClick}>
     Logout
 </button>
 
