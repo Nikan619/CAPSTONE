@@ -11,6 +11,7 @@ import {useState} from 'react'
 import Login from './pages/Login'
 import HouseMemberDetails from './components/HouseMemberDetails.js';
 import { BrowserRouter } from 'react-router-dom';
+import Bills from "./pages/Bills.js"
 
 function App() {
 
@@ -44,6 +45,9 @@ if(!user) return<Login setUser={setUser}/>
       </Route>
       <Route path = "/memberdetails">
         <HouseMemberDetails />
+      </Route>
+      <Route path = "/bills">
+        <Bills/>
       </Route>
      
       </main>

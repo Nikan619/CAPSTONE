@@ -10,6 +10,8 @@ post "/login", to: "sessions#create"
 delete "/logout", to: "sessions#destroy"
 get "/house", to: "house#index"
 
+get "/bills", to: "bills#index"
+
   
   
 end

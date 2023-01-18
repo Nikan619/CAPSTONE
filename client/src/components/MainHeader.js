@@ -36,6 +36,9 @@ return (
 <li>
     <NavLink  to ="/house">How much do you know about the House?!</NavLink>
 </li>
+<li>
+    <NavLink  to ="/bills">Billing?!</NavLink>
+</li>
 <button className={styles.button} onClick={handleLogoutClick}>
     Logout
 </button>
