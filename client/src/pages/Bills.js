@@ -1,5 +1,7 @@
 import { useEffect,useState } from "react"
 
+import BillsList from "../components/BillsList.js";
+
 
 function Bills(){
 
@@ -23,7 +25,7 @@ const handleSubmit =e =>{
             method: "GET",
             headers: { 'Content-Type': 'application/json'}
         }).then(response => response.json())
-        .then(data=>{console.log(data);})
+        .then(data=>{setBillsData(data);})
     
  
 
@@ -41,6 +43,10 @@ return(
       </label>
       <button type="submit">Submit</button>
     </form>
+    <div style ={{display:"flex"}}>
+
+<BillsList bills={billsData}/>
+    </div>
     </>
 )
 
