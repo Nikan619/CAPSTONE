@@ -12,6 +12,7 @@ import Login from './pages/Login'
 import HouseMemberDetails from './components/HouseMemberDetails.js';
 import { BrowserRouter } from 'react-router-dom';
 import Bills from "./pages/Bills.js"
+import PartyAffiliation from './pages/PartyAffiliation.js';
 
 function App() {
 
@@ -37,6 +38,9 @@ if(!user) return<Login setUser={setUser}/>
       <h1> Hello from APP</h1>
       <main>
         <Route exact path = "/"></Route>
+        <Route path = "/affiliation">
+           <PartyAffiliation user= {user} />
+        </Route>
 <Route path = "/senators" >
       <Congress  user={user}/>
       </Route>

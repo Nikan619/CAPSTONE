@@ -12,6 +12,10 @@ get "/house", to: "house#index"
 
 get "/bills", to: "bills#index"
 
+get "/party", to: "party#index"
+
+post "/userparty", to: "party#create"
+
   
   
 end
