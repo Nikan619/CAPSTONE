@@ -15,21 +15,37 @@ import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
 import alanBtn from'@alan-ai/alan-sdk-web'
 
+
+const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/stage';
+
 function App() {
 
 const [user, setUser] = useState(null);
 
 useEffect(()=>{
+
+
+  alanBtn({
+    key: alanKey,
+    onCommand: ({command}) =>{
+      if(command ='testCommand'){
+       alert('This code was ecxecuted')
+      }
+
+    }
+  })
   fetch("/me").then((r)=>{
     if(r.ok){
       r.json().then((user)=> setUser(user))
     }
   });
+
+
+ 
 },[]);
 
 
 if(!user) return<Login setUser={setUser}/>
-
 
 
 
