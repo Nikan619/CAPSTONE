@@ -16,6 +16,9 @@ get "/party", to: "party#index"
 
 post "/userparty", to: "party#create"
 
+
+get "/party/:id", to: "party#partyaffiliation"
+
   
   
 end

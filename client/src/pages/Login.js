@@ -3,6 +3,8 @@ import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
 
+import styles from "./Login.module.css";
+
 
 function Login({ setUser}) {
   const [showLogin, setShowLogin] = useState(true);
@@ -15,7 +17,7 @@ function Login({ setUser}) {
         <LoginForm setUser={setUser}/>
           <form setUser={setUser} />
           <br />
-          <p>
+          <p className={styles.p}>
             Don't have an account? &nbsp;
             <button color="secondary" onClick={() => setShowLogin(false)}>
               Sign Up

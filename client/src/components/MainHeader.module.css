@@ -14,3 +14,24 @@ top: -5px;
 }
 
 
+.link1{
+    font-size:xx-large;
+    background-color: green;
+    text-align: center;
+   
+}
+.link2{
+    font-size:xx-large;
+    background-color: red;
+    text-align: center;
+}
+.link3{
+    font-size:xx-large;
+    background-color: blueviolet;
+    text-align: center;
+}
+.link4{
+    font-size:xx-large;
+    background-color: grey;
+    text-align: center;
+}

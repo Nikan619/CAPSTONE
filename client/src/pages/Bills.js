@@ -27,7 +27,7 @@ const handleSubmit =e =>{
         }).then(response => response.json())
         .then(data=>{setBillsData(data);})
     
- 
+
 
 }
 
@@ -43,8 +43,7 @@ return(
       </label>
       <button type="submit">Submit</button>
     </form>
-    <div style ={{display:"flex"}}>
-
+    <div >
 <BillsList bills={billsData}/>
     </div>
     </>

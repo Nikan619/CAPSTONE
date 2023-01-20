@@ -11,6 +11,12 @@ end
 
 
 
+def partyaffiliation 
+    user = User.find(params[:id])
+    render json: user.party, status: :ok
+end
+
+
 
 private
 

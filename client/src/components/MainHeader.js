@@ -29,16 +29,19 @@ return (
 <header> 
 <nav className ="NavBar">
 <ul>
+<ul className= {styles.link1}>
+    <NavLink  to ="/affiliation">Party Creed</NavLink>
+</ul>
 
-<li>
+<ul className={styles.link2}>
     <NavLink  to ="/senators">Your State's Senators!</NavLink>
-</li>
-<li>
+</ul>
+<ul className={styles.link3}>
     <NavLink  to ="/house">How much do you know about the House?!</NavLink>
-</li>
-<li>
+</ul>
+<ul className={styles.link4}>
     <NavLink  to ="/bills">Billing?!</NavLink>
-</li>
+</ul>
 <button className={styles.button} onClick={handleLogoutClick}>
     Logout
 </button>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from "./LoginForm.module.css"
 
 const LoginForm = ({setUser}) => {
   const [username, setUsername] = useState('');
@@ -28,8 +29,9 @@ const LoginForm = ({setUser}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='login-form'>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input
+      className={styles.input}
         type="text"
         id="username"
         placeholder='Username'
@@ -38,6 +40,7 @@ const LoginForm = ({setUser}) => {
       />
       <br />
       <input
+      className={styles.input}
         type="password"
         id="password"
         placeholder='Password'
@@ -46,7 +49,7 @@ const LoginForm = ({setUser}) => {
       />
       <br />
       {error && <p>{error}</p>}
-      <button type="submit" className='login-button'>Login</button>
+      <button  type="submit" className={styles.button}>Login</button>
     </form>
   );
 };
