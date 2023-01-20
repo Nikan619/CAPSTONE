@@ -13,6 +13,7 @@ import HouseMemberDetails from './components/HouseMemberDetails.js';
 import { BrowserRouter } from 'react-router-dom';
 import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
+import alanBtn from'@alan-ai/alan-sdk-web'
 
 function App() {
 
@@ -28,6 +29,9 @@ useEffect(()=>{
 
 
 if(!user) return<Login setUser={setUser}/>
+
+
+
 
   return (
     
