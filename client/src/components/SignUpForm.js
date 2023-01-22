@@ -1,10 +1,13 @@
-import React,{ useState } from "react";
+import React,{ useState,useContext } from "react";
 import styles from "./SignUpForm.module.css"
+import { Context } from "../store/auth-context"
+
 // import App from "./App.js"
 
-function SignUpForm ({ setUser }) {
+function SignUpForm () {
 const [username,setUsername] = useState("");
 const [password,setPassword]=useState("");
+const {user,setUser} = useContext(Context);
 // const [passwordConfirmation,setPasswordConfirmation] = useState("");
 // console.log("hello from create");
 

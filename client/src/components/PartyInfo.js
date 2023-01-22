@@ -4,6 +4,8 @@ import {useEffect,useState} from "react"
 function PartyInfo({user}) {
 
 
+    const republican = "https://1000logos.net/wp-content/uploads/2017/06/Republican-Logo-1874.png";
+    const democrat = "https://static.wixstatic.com/media/93e399_5c8b613039094607a232328c81e3b991~mv2.jpg/v1/fill/w_640,h_596,al_c,lg_1,q_85,enc_auto/93e399_5c8b613039094607a232328c81e3b991~mv2.jpg";
     const [userinfo,setUserInfo] =  useState([])
 
     useEffect(()=>{
@@ -19,6 +21,8 @@ function PartyInfo({user}) {
 return (
 
 <>
+{userinfo.affiliation==="Democrat" ? <img src= {democrat} style= {{width: '50%',height:'50%'}}></img>:null}
+{userinfo.affiliation==="Republican" ? <img src= {republican} style= {{width: '50%',height:'50%'}}></img>:null}
 <h1>{userinfo.affiliation ==='Democrat'? <p>"The Democratic Party is one of the two major contemporary political parties in the United States. Founded in 1828, it was predominantly built by Martin Van Buren, who assembled a wide cadre of politicians in every state behind war hero Andrew Jackson, making it the world's oldest active political party.[11][12][13] Its main political rival has been the Republican Party since the 1850s. The party is a big tent,[14] and is less ideologically uniform than the Republican Party (with major individuals within it frequently holding widely differing political views) due to the broader list of unique voting blocs that compose it,[15][16][17][5][18] though modern liberalism is the majority ideology in the party.[5][19[]"</p>:null}</h1>
 <h1>{userinfo.affiliation ==='Independent'?<p>"The American Independent Party is the party of ordered liberty in a nation under God. We believe in strict adherence to written law. We believe the Constitution is the contract America has with itself. Its willful distortion has led to the violation of our Tenth Amendment guaranteed right to limited government—which inevitably requires oppressive taxation. Its faithful application will lift that burden. Freed from the lawless oppression of Progressive rule, we may then compassionately and justly use our energy and ingenuity to provide for ourselves and our families. We will then establish truly free and responsible enterprise and reassert the basic human right to property
 We believe in protecting all human life however weak, defenseless, or disheartened; endorse the family as the essential bulwark of liberty, compassion, responsibility, and industry; and declare the family’s right and responsibility to nurture, discipline, and educate their children.
