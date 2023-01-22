@@ -1,5 +1,5 @@
 
-import Details from "./Details.js"
+
 
 import React, {useState} from "react";
 
@@ -24,7 +24,7 @@ console.log(senator);
     return (
         <>
        <h1 onClick={handleClick}> {senator.short_title} {senator.first_name} {senator.last_name} </h1>
-       {newComponent && <Details senator= {senator}/>}
+       {/* {newComponent && <Details senator= {senator}/>} */}
        <p> You can find them at...</p>
        <a href ={senator.url}>Seantor's Homepage</a>
        <p>Connect with them on twitter </p>

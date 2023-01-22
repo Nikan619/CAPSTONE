@@ -1,6 +1,9 @@
 
 import {useEffect,useState} from 'react'
 
+import HouseInfo from '../components/HouseInfo.js'
+
+import Search from "../components/Search.js"
 
 function HouseTrivia () {
 
@@ -14,6 +17,16 @@ const[houseData,setHouseData] =useState([])
 const [correct,setCorrect] = useState(false)
 
 const[incorrect,setIncorrect] = useState(false)
+
+const [newComponent,setNewComponent] = useState(false)
+
+
+
+
+const handleClick=()=>{
+    setNewComponent(!newComponent);
+
+}  
 
 const handleChangeanswer =(e) =>{
     setAnswer(e.target.value)
@@ -32,7 +45,7 @@ const handleChangeanswer =(e) =>{
 e.preventDefault();
 const answerInt=  parseInt(answer)
 console.log(answerInt);
-if(answerInt === houseData.length)
+if(answerInt === 435)
 {
     setCorrect(!correct)
     
@@ -66,6 +79,15 @@ const reverseCorrect = () => {setTimeout(()=> {
    
     {correct? <> <h1> {reverseCorrect()}</h1><img src = {address} alt="thumbs up bush"  style= {{width: '50%',height:'50%'}}/><h2>You got it!</h2></>: null}
     {incorrect?<> <h1>{reverseIncorrect()}</h1> <img src = {sad} alt="sad bush" style= {{width: '50%',height:'50%'}}/><h2> Failure!</h2></>: null}
+<div>
+    <br></br>
+    <br></br>
+    <div><Search houseData={houseData} setHouseData={setHouseData}/></div>
+<button onClick={handleClick}>All House Members Here!</button>
+
+</div>
+
+      {newComponent && <HouseInfo houseData={houseData} setHouseData={setHouseData}/>}
    
     
     </>
