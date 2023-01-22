@@ -1,32 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState,useContext} from 'react';
 import styles from "./LoginForm.module.css"
+import {Context} from "../store/auth-context"
 
-const LoginForm = ({setUser}) => {
+
+
+const LoginForm = () => {
+
+  const {setUser,fetchLogin} = useContext(Context)
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   fetch('/login', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({ username, password }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       throw new Error('Invalid password');
+  //     })
+  //     .then((data) => {
+  //       setUser(data)
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //     });
+  // };
+
+ 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    fetch('/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Invalid password');
-      })
-      .then((data) => {
-        setUser(data)
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
+    fetchLogin(username, password,setError)}
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>

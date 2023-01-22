@@ -1,10 +1,16 @@
 import {NavLink} from 'react-router-dom';
 
+import React,{useContext} from 'react'
+
 import styles from  "./MainHeader.module.css"
 
+import { Context } from "../store/auth-context"
 
 
-const MainHeader = ({user,setUser}) => {
+
+const MainHeader = () => {
+
+    const {user,setUser} = useContext(Context)
 
 //     const mystyle ={
 //         font: "inherit",
@@ -41,6 +47,9 @@ return (
 </ul>
 <ul className={styles.link4}>
     <NavLink  to ="/bills">Billing?!</NavLink>
+</ul>
+<ul className={styles.link4}>
+    <NavLink  to ="/statements">WordisBond!</NavLink>
 </ul>
 <button className={styles.button} onClick={handleLogoutClick}>
     Logout

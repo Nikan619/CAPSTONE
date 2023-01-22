@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 
 function Congress({user}) {
 
-    console.log(user);
+   
 
 
     const [stateSenators, setStateSenators] = useState([]);

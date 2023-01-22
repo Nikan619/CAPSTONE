@@ -19,6 +19,6 @@ post "/userparty", to: "party#create"
 
 get "/party/:id", to: "party#partyaffiliation"
 
-  
+  get '/statements' , to: "statement#index"
   
 end

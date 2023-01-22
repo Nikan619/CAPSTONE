@@ -6,46 +6,46 @@ import Congress from "./pages/Congress.js"
 import MainHeader from './components/MainHeader.js'
 import HouseTrivia from './pages/HouseTrivia.js';
 import { useEffect } from 'react';
-
+import {useContext} from "react"
 import {useState} from 'react'
 import Login from './pages/Login'
-import HouseMemberDetails from './components/HouseMemberDetails.js';
+import {useNavigate} from "react-router-dom"
 import { BrowserRouter } from 'react-router-dom';
 import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
 import alanBtn from'@alan-ai/alan-sdk-web'
-
+import {Context} from './store/auth-context'
+import Statements from './components/Statements'
 
 const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/stage';
 
 function App() {
 
-const [user, setUser] = useState(null);
+  const navigate = useNavigate()
+  
+  const {user,setUser,fetchMe}= useContext(Context)
+
+// const [user, setUser] = useState(null);
 
 useEffect(()=>{
 
 
   alanBtn({
     key: alanKey,
-    onCommand: ({command}) =>{
-      if(command ='testCommand'){
-       alert('This code was ecxecuted')
+    onCommand: ({command, articles}) =>{
+      if(command ='newHeadlines'){
+       navigate('/affiliation')
       }
 
     }
   })
-  fetch("/me").then((r)=>{
-    if(r.ok){
-      r.json().then((user)=> setUser(user))
-    }
-  });
 
-
+  
  
 },[]);
 
 
-if(!user) return<Login setUser={setUser}/>
+if(!user) return<Login setUser={user} />
 
 
 
@@ -54,8 +54,8 @@ if(!user) return<Login setUser={setUser}/>
   
     <div className="App">
    
-   <MainHeader user={user} setUser={setUser} />
-      <h1> Hello from APP</h1>
+   <MainHeader />
+  
       <main>
         <Route exact path = "/"></Route>
         <Route path = "/affiliation">
@@ -67,9 +67,10 @@ if(!user) return<Login setUser={setUser}/>
       <Route path = "/house" >
         <HouseTrivia  user={user}/>
       </Route>
-      <Route path = "/memberdetails">
-        <HouseMemberDetails />
+      <Route path = "/statements" >
+      <Statements user={user}/>
       </Route>
+    
       <Route path = "/bills">
         <Bills/>
       </Route>
