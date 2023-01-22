@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import {useContext} from "react"
 import {useState} from 'react'
 import Login from './pages/Login'
-import {useNavigate} from "react-router-dom"
+
 import { BrowserRouter } from 'react-router-dom';
 import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
@@ -21,7 +21,7 @@ const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/
 
 function App() {
 
-  const navigate = useNavigate()
+
   
   const {user,setUser,fetchMe}= useContext(Context)
 
@@ -34,7 +34,7 @@ useEffect(()=>{
     key: alanKey,
     onCommand: ({command, articles}) =>{
       if(command ='newHeadlines'){
-       navigate('/affiliation')
+     console.log("hello motto");
       }
 
     }
