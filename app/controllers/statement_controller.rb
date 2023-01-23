@@ -3,7 +3,7 @@ class StatementController < ApplicationController
 
     skip_before_action :authorize
     def index
-        doc = HTTParty.get( "https://api.propublica.org/congress/v1/statements/latest.json", headers:{'X-API-Key': 'uiJnvK5xCwxGSXpNjnh7YI18xq7CI0ybZ3Z19SJ8'})
+        doc = HTTParty.get( "https://api.propublica.org/congress/v1/115/senate/committees.json", headers:{'X-API-Key': 'uiJnvK5xCwxGSXpNjnh7YI18xq7CI0ybZ3Z19SJ8'})
         if response 
            render json: doc["results"]
            else

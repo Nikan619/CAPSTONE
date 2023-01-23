@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Context } from "../store/auth-context"
-import {useContext} from "react";
+import {useContext, useRef} from "react";
 
 const SearchForm=()=>{
 
@@ -9,6 +9,7 @@ const SearchForm=()=>{
 const searchValue= React.useRef('');
 
 const searchStatement= () =>{
+    console.log(searchValue.currentValue);
     setQuery(searchValue.current.value)
 }
 

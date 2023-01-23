@@ -11,7 +11,7 @@ const StatementsList = ()=>{
 
 const {statement,loading}= useContext(Context);
 
-useEffect(()=>{console.log(statement)})
+
 
 
 if(loading){
@@ -29,7 +29,7 @@ if(statement.length<1){
 
    <div className="statements-center">
     {statement.map((s)=>{
-        console.log(s);
+        
        return <StatementC key ={s.member_id} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
     })}
 

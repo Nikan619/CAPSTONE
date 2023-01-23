@@ -21,15 +21,8 @@ import {createContext,useState,useEffect} from 'react';
     try {
       const response = await fetch(`/searchstatements?query=${query}`)
      const data = await response.json();
-     console.log(data);
-      
+
       if(data){
-    //    const newStatements = title.map((item)=>{
-    //     const {title,party,chamber,url}=item;
-    //     return {title: title,
-    //     party:party,
-    //   chamber:chamber,
-    // url:url}
     
   
     setStatement(data);
