@@ -34,9 +34,12 @@ const MainHeader = () => {
 return (
 <header> 
 <nav className ="NavBar">
-<ul>
+<div>
 <ul className= {styles.link1}>
     <NavLink  to ="/affiliation">Party Creed</NavLink>
+</ul>
+<ul className= {styles.link1}>
+    <NavLink  to ="/list">List</NavLink>
 </ul>
 
 <ul className={styles.link2}>
@@ -56,7 +59,7 @@ return (
 </button>
 
 
-</ul>
+</div>
 </nav>
 </header>
 

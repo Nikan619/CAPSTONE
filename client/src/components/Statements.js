@@ -4,6 +4,8 @@ import {useState,useEffect} from'react';
 
 
 
+
+
 function Statement(){
 
 
@@ -11,6 +13,13 @@ function Statement(){
 
 
     const[recentBills,setRecentBills]=useState(false);
+
+
+    const[searchTerm,setSearchTerm]=useState('a');
+
+
+
+    const[statementsearch,Setsearch]= useState([]);
 
 
 

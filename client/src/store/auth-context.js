@@ -9,6 +9,52 @@ import {createContext,useState,useEffect} from 'react';
 
  const ContextProvider = (props) =>{
 
+
+
+  const [loading,setLoading] = useState(true);
+  const[query,setQuery] = useState("AHCA");
+
+  const[statement,setStatement] = useState([]);
+
+  const fetchStatements= async () =>{
+    setLoading(true);
+    try {
+      const response = await fetch(`/searchstatements?query=${query}`)
+     const data = await response.json();
+     console.log(data);
+      
+      if(data){
+    //    const newStatements = title.map((item)=>{
+    //     const {title,party,chamber,url}=item;
+    //     return {title: title,
+    //     party:party,
+    //   chamber:chamber,
+    // url:url}
+    
+  
+    setStatement(data);
+      }
+       
+    else {
+        setStatement([]);
+      }
+      setLoading(false);
+    }catch(error){
+      console.log(error);
+      setLoading(false);
+    }
+  }
+      
+   
+    
+
+  useEffect(()=>{
+    fetchStatements();
+  },[query])
+
+
+  
+
     const [user, setUser] = useState(null);
 useEffect(() =>{
     fetchMe()
@@ -63,7 +109,11 @@ useEffect(() =>{
         setUser,
         fetchMe,
         handleLogoutClick,
-        fetchLogin
+        fetchLogin,
+        loading,
+        query,
+        setQuery,
+        statement,
     }
 return(
     <Context.Provider value={store}>{props.children}</Context.Provider>
