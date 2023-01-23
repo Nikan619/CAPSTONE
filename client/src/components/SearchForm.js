@@ -6,12 +6,24 @@ import {useContext} from "react";
 const SearchForm=()=>{
 
     const {setQuery} = useContext(Context);
+const searchValue= React.useRef('');
+
+const searchStatement= () =>{
+    setQuery(searchValue.current.value)
+}
 
 return (
 
-<div>
+<section className='section search'>
+    <form action="">
+        <div className="form-control">
+            <label htmlFor="name">search your statement</label>
+            <input type="text" id="statement" ref={searchValue} onChange={searchStatement}/>
+        </div>
+    </form>
+
 <h2>search form component</h2>
-</div>
+</section>
 
 
 )
