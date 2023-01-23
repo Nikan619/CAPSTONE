@@ -1,16 +1,16 @@
 
 import React from 'react';
 import { Context } from "../store/auth-context"
-import {useContext, useRef} from "react";
+import {useContext, useRef,useState} from "react";
 
 const SearchForm=()=>{
 
     const {setQuery} = useContext(Context);
-const searchValue= React.useRef('');
+const [searchValue,setSearchValue]= useState('');
 
 const searchStatement= () =>{
-    console.log(searchValue.currentValue);
-    setQuery(searchValue.current.value)
+  
+    setQuery(searchValue)
 }
 
 return (
@@ -19,7 +19,7 @@ return (
     <form action="">
         <div className="form-control">
             <label htmlFor="name">search your statement</label>
-            <input type="text" id="statement" ref={searchValue} onChange={searchStatement}/>
+            <input type="text" id="statement" value={searchValue} onChange={searchStatement}/>
         </div>
     </form>
 

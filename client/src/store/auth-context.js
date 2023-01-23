@@ -12,7 +12,7 @@ import {createContext,useState,useEffect} from 'react';
 
 
   const [loading,setLoading] = useState(true);
-  const[query,setQuery] = useState("AHCA");
+  const[query,setQuery] = useState("");
 
   const[statement,setStatement] = useState([]);
 
