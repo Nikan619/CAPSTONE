@@ -16,6 +16,8 @@ import PartyAffiliation from './pages/PartyAffiliation.js';
 import alanBtn from'@alan-ai/alan-sdk-web'
 import {Context} from './store/auth-context'
 import Statements from './components/Statements'
+import Error from "./pages/Error";
+import StatementsList from "./components/StatementsList"
 
 const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/stage';
 
@@ -58,6 +60,9 @@ if(!user) return<Login setUser={user} />
   
       <main>
         <Route exact path = "/"></Route>
+        <Route path = "/list">
+         <StatementsList />
+        </Route>
         <Route path = "/affiliation">
            <PartyAffiliation user= {user} />
         </Route>
@@ -74,7 +79,9 @@ if(!user) return<Login setUser={user} />
       <Route path = "/bills">
         <Bills/>
       </Route>
-     
+      {/* <Route exact path ="*">
+        <Error/>
+      </Route> */}
       </main>
     </div>
    
