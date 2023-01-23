@@ -8,6 +8,7 @@ function SignUpForm () {
 const [username,setUsername] = useState("");
 const [password,setPassword]=useState("");
 const {user,setUser} = useContext(Context);
+const [errormessage,setErrormessage]= useState("")
 // const [passwordConfirmation,setPasswordConfirmation] = useState("");
 // console.log("hello from create");
 
@@ -17,6 +18,7 @@ function handleSubmit(e) {
     username,
     password,
   }
+  
   fetch("/signup",{
 
     method: "POST",
@@ -24,8 +26,25 @@ function handleSubmit(e) {
   },
   body: JSON.stringify(user),
 })
-.then((r)=> r.json())
-.then((data)=> setUser(data))
+.then((r)=> {
+  if(r.status === 422){
+
+   return r.json().then(errors=>{
+    throw new Error(errors.message);
+    
+   });
+  
+  }
+  return r.json();
+})
+.then((data)=> {
+  setUser(data)
+})
+.catch(error=>{
+  console.log(error)
+  setErrormessage(error);
+ console.log(errormessage);
+})
 }
 
 return (
@@ -49,10 +68,11 @@ return (
 
   <br></br>
    <button className={styles.button} type="submit">Create Account</button>
+   {errormessage && <p>Password must be 5 characters long</p> }
+  
   </form>
 
-   
-  
+ 
 )
     
 }
