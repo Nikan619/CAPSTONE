@@ -6,20 +6,26 @@ import {useContext, useRef,useState} from "react";
 const SearchForm=()=>{
 
     const {setQuery} = useContext(Context);
-const [searchValue,setSearchValue]= useState('');
+const searchValue =React.useRef('');
 
-const searchStatement= (e) =>{
-  setSearchValue(e.target.value);
-    setQuery(searchValue)
+React.useEffect(()=>{
+    searchValue.current.focus();
+},[])
+
+const searchStatement= () =>{
+ 
+    setQuery(searchValue.currentValue);
 }
+
+const handleSubmit = (e)=>{e.preventDefault();}
 
 return (
 
 <section className='section search'>
-    <form action="">
+    <form className="search-form" onSubmit={handleSubmit}>
         <div className="form-control">
             <label htmlFor="name">search your statement</label>
-            <input type="text" id="statement" value={searchValue} onChange={searchStatement}/>
+            <input type="text" id="statement" ref={searchValue} onChange={searchStatement}/>
         </div>
     </form>
 

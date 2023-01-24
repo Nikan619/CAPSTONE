@@ -14,8 +14,8 @@ return(
     <div className='statement-footer'>
         <h3>{organization}</h3>
     
-        <a href={uri}>{uri}</a>
-        <NavLink to={`/nomination/${id}`} className="btn btn-primary"> Deatils</NavLink>
+        {/* <a href={uri}>{uri}</a> */}
+        <NavLink to={`/nomination/${id}`} className="btn btn-primary"> Details</NavLink>
     </div>
     </article>
 )
