@@ -8,8 +8,8 @@ const SearchForm=()=>{
     const {setQuery} = useContext(Context);
 const [searchValue,setSearchValue]= useState('');
 
-const searchStatement= () =>{
-  
+const searchStatement= (e) =>{
+  setSearchValue(e.target.value);
     setQuery(searchValue)
 }
 

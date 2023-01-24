@@ -30,7 +30,7 @@ if(statement.length<1){
    <div className="statements-center">
     {statement.map((s)=>{
         
-       return <StatementC key ={s.member_id} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
+       return <StatementC key ={s.date} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
     })}
 
    </div>

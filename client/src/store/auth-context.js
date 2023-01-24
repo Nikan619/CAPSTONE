@@ -49,9 +49,7 @@ import {createContext,useState,useEffect} from 'react';
   
 
     const [user, setUser] = useState(null);
-useEffect(() =>{
-    fetchMe()
-},[])
+
 
     const fetchMe = () =>{
         fetch("/me").then((r)=>{

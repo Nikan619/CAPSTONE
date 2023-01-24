@@ -32,6 +32,8 @@ function App() {
 useEffect(()=>{
 
 
+fetchMe();
+
   alanBtn({
     key: alanKey,
     onCommand: ({command, articles}) =>{
@@ -40,6 +42,9 @@ useEffect(()=>{
       }
 
     }
+
+
+  
   })
 
   
@@ -47,7 +52,7 @@ useEffect(()=>{
 },[]);
 
 
-if(!user) return<Login setUser={user} />
+if(!user) return<Login />
 
 
 
