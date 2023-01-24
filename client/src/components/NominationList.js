@@ -25,7 +25,7 @@ if(nominations.length<1){
         <>
 <SearchForm/>
 <section className = "section">
-    <h2 className= "section-title">statements</h2>
+    <h2 className= "section-title">nominations</h2>
 
    <div className="cocktails-center">
     {nominations.map((s)=>{
