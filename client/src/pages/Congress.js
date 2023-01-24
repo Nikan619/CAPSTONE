@@ -6,6 +6,8 @@ import SenatorDisplay from "../components/SenatorDisplay.js"
 
 import React, {useState} from 'react';
 
+import Loading from "../components/Loading";
+
 
 function Congress({user}) {
 
@@ -77,7 +79,7 @@ const handleSubmit = (e) => {
             
             </form>
             <h1> Here are your state senators</h1>
-            {isLoading? <section><h1>LOADING...</h1></section>: <h1> {mappedSenators} </h1>}
+            {isLoading? <Loading/>: <h1> {mappedSenators} </h1>}
           
             </div>
             </>
