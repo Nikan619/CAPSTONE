@@ -52,7 +52,7 @@ return (
     <NavLink  to ="/bills">Billing?!</NavLink>
 </ul>
 <ul className={styles.link4}>
-    <NavLink  to ="/statements">WordisBond!</NavLink>
+    <NavLink  to ="/nominations">Nominations</NavLink>
 </ul>
 <button className={styles.button} onClick={handleLogoutClick}>
     Logout

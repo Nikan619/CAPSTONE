@@ -6,10 +6,10 @@ import {useState,useEffect} from'react';
 
 
 
-function Statement(){
+function Nominations(){
 
 
-    const [statement,setStatement]= useState([])
+    const [nominations,setNominations]= useState([])
 
 
     const[recentBills,setRecentBills]=useState(false);
@@ -24,22 +24,22 @@ function Statement(){
 
 
     useEffect(()=>{
-        fetch( "/statements") 
+        fetch( "/nominations") 
         .then(response=>response.json())
-        .then(statements => {
-            setStatement(statements)
-            console.log(statements);
+        .then(nominations => {
+            setNominations(nominations);
+            console.log(nominations);
         })   
         },[])
         
 
 
 
-      const mappedStatement=statement.map((statement)=>{
+      const mappedNomination=nominations.map((nomination)=>{
         return <>
-        <h1> Party:{statement.party}</h1>
-        <h2>  Speaker: {statement.name}</h2>
-        <p>Subject: {statement.title}</p>
+        <h1> Party:{nomination.party}</h1>
+        <h2>  Speaker: {nomination.name}</h2>
+        <p>Subject: {nomination.title}</p>
 
 
         </>
@@ -57,7 +57,7 @@ const handleClick = ()=>{
 <>
   <p> Click to see recent statements by party members.</p>
 <button onClick={handleClick}>Recent Statements</button>
-{recentBills?<h1>{mappedStatement}</h1>:null}
+{recentBills?<h1>{mappedNomination}</h1>:null}
 <p>Search for specific Statements</p>
 
 
@@ -69,4 +69,4 @@ const handleClick = ()=>{
 }
 
 
-export default Statement
+export default Nominations

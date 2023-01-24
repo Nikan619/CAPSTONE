@@ -15,7 +15,7 @@ import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
 import alanBtn from'@alan-ai/alan-sdk-web'
 import {Context} from './store/auth-context'
-import Statements from './components/Statements'
+import Nominations from './components/Nominations'
 import Error from "./pages/Error";
 import StatementsList from "./components/StatementsList"
 
@@ -77,8 +77,8 @@ if(!user) return<Login />
       <Route path = "/house" >
         <HouseTrivia  user={user}/>
       </Route>
-      <Route path = "/statements" >
-      <Statements user={user}/>
+      <Route path = "/Nominations" >
+      <Nominations />
       </Route>
     
       <Route path = "/bills">

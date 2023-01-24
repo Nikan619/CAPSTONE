@@ -22,5 +22,8 @@ get "/party/:id", to: "party#partyaffiliation"
   get '/statements' , to: "statement#index"
 
   get '/searchstatements' , to: "statement#search"
+
+
+  get "/nominations" , to: "nominations#index"
   
 end
