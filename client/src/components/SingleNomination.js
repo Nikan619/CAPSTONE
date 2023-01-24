@@ -1,13 +1,40 @@
 
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Loading from '../components/Loading';
-import {useParams, Link} from 'react-router-dom';
+
 
 
 function SingleNomination ({id}){
+
+
+    const [statement,setStatement]= useState(null);
+    
+useEffect(()=>{
+    fetch(`/specificnomination?query=${id}`,{
+        method: "GET",
+        headers: { 'Content-Type': 'application/json'}
+    }).then(response => response.json())
+    .then(data=>{setStatement(data);})
+   
+},[id])
   
 
-    return(  <h1>{id}</h1>
+
+console.log(statement.congress);
+
+
+
+const mappedStatement = ()=>{
+    return statement.map((s)=>{
+        <li>{s.congress};</li>
+
+    })
+
+
+
+}
+    return( 
+         <h1>{mappedStatement}</h1>
     )
 }
 
