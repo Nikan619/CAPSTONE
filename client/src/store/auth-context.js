@@ -13,7 +13,7 @@ import {createContext,useState,useEffect} from 'react';
 
   const [loading,setLoading] = useState(true);
   const[query,setQuery] = useState("");
-  const [nommy,setNommy]=useState("")
+  const [nommy,setNommy]=useState("received")
 
   const [nominations,setNominations] = useState([])
 
@@ -132,6 +132,8 @@ import {createContext,useState,useEffect} from 'react';
         setQuery,
         statement,
         nominations,
+        nommy,
+        setNommy
       
     }
 return(

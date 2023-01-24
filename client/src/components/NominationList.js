@@ -5,7 +5,7 @@ import {useEffect} from "react"
 import {useContext} from "react"
 import Nomination from './Nomination';
 
-import SearchForm from "./SearchForm"
+import InputFormNomination from './InputFormNomination';
 const NominationsList = ()=>{
 
 
@@ -23,7 +23,7 @@ if(nominations.length<1){
 
     return(
         <>
-<SearchForm/>
+<InputFormNomination />
 <section className = "section">
     <h2 className= "section-title">nominations</h2>
 

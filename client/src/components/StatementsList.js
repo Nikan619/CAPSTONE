@@ -5,7 +5,9 @@ import Loading from "./Loading"
 import {useEffect} from "react"
 import {useContext} from "react"
 import StatementC from "./StatementC"
-import SearchForm from "./SearchForm"
+
+import SearchFormStatement from './SearchFormStatement'
+
 const StatementsList = ()=>{
 
 
@@ -23,7 +25,7 @@ if(statement.length<1){
 
     return(
         <>
-<SearchForm/>
+<SearchFormStatement />
 <section className = "section">
     <h2 className= "section-title">statements</h2>
 
