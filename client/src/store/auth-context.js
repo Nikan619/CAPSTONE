@@ -13,6 +13,9 @@ import {createContext,useState,useEffect} from 'react';
 
   const [loading,setLoading] = useState(true);
   const[query,setQuery] = useState("");
+  const [nommy,setNommy]=useState("")
+
+  const [nominations,setNominations] = useState([])
 
   const[statement,setStatement] = useState([]);
 
@@ -38,12 +41,35 @@ import {createContext,useState,useEffect} from 'react';
     }
   }
       
-   
+  const fetchNominations= async () =>{
+    setLoading(true);
+    try {
+      const response = await fetch( `/nominations?query=${nommy}`)
+     const data = await response.json();
+
+      if(data){
     
+  console.log(data);
+    setNominations(data);
+      }
+       
+    else {
+        setNominations([]);
+      }
+      setLoading(false);
+    }catch(error){
+      console.log(error);
+      setLoading(false);
+    }
+  }
+    
+
+
 
   useEffect(()=>{
     fetchStatements();
-  },[query])
+    fetchNominations();
+  },[query,nommy])
 
 
   
@@ -105,6 +131,8 @@ import {createContext,useState,useEffect} from 'react';
         query,
         setQuery,
         statement,
+        nominations,
+      
     }
 return(
     <Context.Provider value={store}>{props.children}</Context.Provider>

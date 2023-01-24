@@ -1,15 +1,15 @@
-
 import React from 'react';
 import { Context } from "../store/auth-context"
 import Loading from "./Loading"
 import {useEffect} from "react"
 import {useContext} from "react"
-import StatementC from "./StatementC"
+import Nomination from './Nomination';
+
 import SearchForm from "./SearchForm"
-const StatementsList = ()=>{
+const NominationsList = ()=>{
 
 
-const {statement,loading}= useContext(Context);
+const {nominations,loading}= useContext(Context);
 
 
 
@@ -17,7 +17,7 @@ const {statement,loading}= useContext(Context);
 if(loading){
     return <Loading/>
 }
-if(statement.length<1){
+if(nominations.length<1){
     <h2 className="section-title">No statements matched your search criteria</h2>
 }
 
@@ -28,9 +28,9 @@ if(statement.length<1){
     <h2 className= "section-title">statements</h2>
 
    <div className="cocktails-center">
-    {statement.map((s)=>{
+    {nominations.map((s)=>{
         
-       return <StatementC key ={s.date} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
+       return <Nomination key ={s.id} status={s.status} uri={s.uri} description={s.description} organization={s.organization} title={s.title} id ={s.id} name={s.name}/>
     })}
 
    </div>
@@ -44,4 +44,4 @@ if(statement.length<1){
     )
 }
 
-export default StatementsList
+export default NominationsList

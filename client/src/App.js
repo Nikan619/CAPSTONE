@@ -18,6 +18,7 @@ import {Context} from './store/auth-context'
 import Nominations from './components/Nominations'
 import Error from "./pages/Error";
 import StatementsList from "./components/StatementsList"
+import NominationList from "./components/NominationList"
 
 const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/stage';
 
@@ -79,6 +80,9 @@ if(!user) return<Login />
       </Route>
       <Route path = "/Nominations" >
       <Nominations />
+      </Route>
+      <Route path = "/NominationList" >
+      <NominationList/>
       </Route>
     
       <Route path = "/bills">
