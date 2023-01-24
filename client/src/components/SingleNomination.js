@@ -4,11 +4,10 @@ import Loading from '../components/Loading';
 import {useParams, Link} from 'react-router-dom';
 
 
+function SingleNomination ({id}){
+  
 
-function SingleNomination (){
-  
-  
-    return(  <h1></h1>
+    return(  <h1>{id}</h1>
     )
 }
 

@@ -20,6 +20,8 @@ import Error from "./pages/Error";
 import StatementsList from "./components/StatementsList"
 import NominationList from "./components/NominationList"
 import SingleNomination from "./components/SingleNomination"
+import {useParams} from "react-router-dom";
+import {RouterContext} from 'react-router-dom'
 
 const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/stage';
 
