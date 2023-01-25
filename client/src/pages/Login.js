@@ -47,7 +47,7 @@ const  { setUser } = useContext(Context);
       {showLogin ? (
         <>
         <LoginForm setUser={setUser}/>
-          <form setUser={setUser} />
+       
           <br />
           <p className={stylesp.p}>
             Don't have an account? &nbsp;
