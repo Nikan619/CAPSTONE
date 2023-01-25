@@ -10,9 +10,12 @@ import {createContext,useState,useEffect} from 'react';
  const ContextProvider = (props) =>{
 
 
-
+const [committ,setCommitt]=useState("house");
   const [loading,setLoading] = useState(true);
-  const[query,setQuery] = useState("AHCA");
+  const[query,setQuery] = useState("");
+  const [nommy,setNommy]=useState("received")
+
+  const [nominations,setNominations] = useState([])
 
   const[statement,setStatement] = useState([]);
 
@@ -38,20 +41,65 @@ import {createContext,useState,useEffect} from 'react';
     }
   }
       
-   
+  const fetchNominations= async () =>{
+    setLoading(true);
+    try {
+      const response = await fetch( `/nominations?query=${nommy}`)
+     const data = await response.json();
+
+      if(data){
     
+ 
+    setNominations(data);
+      }
+       
+    else {
+        setNominations([]);
+      }
+      setLoading(false);
+    }catch(error){
+      console.log(error);
+      setLoading(false);
+    }
+  }
+    
+  const fetchCommittee= async () =>{
+    setLoading(true);
+    try {
+      const response = await fetch( `/committee?query=${committ}`)
+     const data = await response.json();
+
+      if(data){
+    
+  console.log(data[0].committees
+    );
+    setCommitt(data[0].committees);
+      }
+       
+    else {
+        setCommitt([]);
+      }
+      setLoading(false);
+    }catch(error){
+      console.log(error);
+      setLoading(false);
+    }
+  }
+    
+
+
 
   useEffect(()=>{
     fetchStatements();
-  },[query])
+    fetchNominations();
+    fetchCommittee();
+  },[query,nommy])
 
 
   
 
     const [user, setUser] = useState(null);
-useEffect(() =>{
-    fetchMe()
-},[])
+
 
     const fetchMe = () =>{
         fetch("/me").then((r)=>{
@@ -107,6 +155,12 @@ useEffect(() =>{
         query,
         setQuery,
         statement,
+        nominations,
+        nommy,
+        setNommy,
+        committ,
+        setCommitt
+      
     }
 return(
     <Context.Provider value={store}>{props.children}</Context.Provider>

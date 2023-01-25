@@ -14,7 +14,7 @@ const [errormessage,setErrormessage]= useState("")
 
 function handleSubmit(e) {
   e.preventDefault();
-  const user={
+  const userN={
     username,
     password,
   }
@@ -24,7 +24,7 @@ function handleSubmit(e) {
     method: "POST",
     headers: {"Content-Type": "application/json",
   },
-  body: JSON.stringify(user),
+  body: JSON.stringify(userN),
 })
 .then((r)=> {
   if(r.status === 422){

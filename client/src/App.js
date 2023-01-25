@@ -15,9 +15,13 @@ import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
 import alanBtn from'@alan-ai/alan-sdk-web'
 import {Context} from './store/auth-context'
-import Statements from './components/Statements'
+import CommitteesList from './components/CommitteesList.js'
 import Error from "./pages/Error";
 import StatementsList from "./components/StatementsList"
+import NominationList from "./components/NominationList"
+import SingleNomination from "./components/SingleNomination"
+import {useParams} from "react-router-dom";
+import {RouterContext} from 'react-router-dom'
 
 const alanKey='b9494fbebd9a86bdd58468224e69996e2e956eca572e1d8b807a3e2338fdd0dc/stage';
 
@@ -32,6 +36,8 @@ function App() {
 useEffect(()=>{
 
 
+fetchMe();
+
   alanBtn({
     key: alanKey,
     onCommand: ({command, articles}) =>{
@@ -40,6 +46,9 @@ useEffect(()=>{
       }
 
     }
+
+
+  
   })
 
   
@@ -47,7 +56,7 @@ useEffect(()=>{
 },[]);
 
 
-if(!user) return<Login setUser={user} />
+if(!user) return<Login setUser={setUser} />
 
 
 
@@ -60,7 +69,7 @@ if(!user) return<Login setUser={user} />
   
       <main>
         <Route exact path = "/"></Route>
-        <Route path = "/list">
+        <Route path = "/statements">
          <StatementsList />
         </Route>
         <Route path = "/affiliation">
@@ -72,12 +81,19 @@ if(!user) return<Login setUser={user} />
       <Route path = "/house" >
         <HouseTrivia  user={user}/>
       </Route>
-      <Route path = "/statements" >
-      <Statements user={user}/>
+      <Route path = "/committees" >
+      <CommitteesList />
+      </Route>
+      <Route path = "/NominationList" >
+      <NominationList/>
       </Route>
     
       <Route path = "/bills">
         <Bills/>
+      </Route>
+      <Route path = "/nomination/:id">
+
+      <SingleNomination />
       </Route>
       {/* <Route exact path ="*">
         <Error/>

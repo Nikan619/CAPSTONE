@@ -32,14 +32,18 @@ const MainHeader = () => {
 
 
 return (
+    <>
+    <button className={styles.button} onClick={handleLogoutClick}>
+    Logout
+</button>
 <header> 
-<nav className ="NavBar">
-<div>
+<nav className ="navbar">
+<div className ='nav-center'>
 <ul className= {styles.link1}>
     <NavLink  to ="/affiliation">Party Creed</NavLink>
 </ul>
 <ul className= {styles.link1}>
-    <NavLink  to ="/list">List</NavLink>
+    <NavLink  to ="/statements">Statements</NavLink>
 </ul>
 
 <ul className={styles.link2}>
@@ -52,16 +56,18 @@ return (
     <NavLink  to ="/bills">Billing?!</NavLink>
 </ul>
 <ul className={styles.link4}>
-    <NavLink  to ="/statements">WordisBond!</NavLink>
+    <NavLink  to ="/committees">Committees</NavLink>
+    </ul>
+    <ul className={styles.link4}>
+    <NavLink  to ="/nominationlist">NominationList</NavLink>
+
 </ul>
-<button className={styles.button} onClick={handleLogoutClick}>
-    Logout
-</button>
-
-
 </div>
 </nav>
 </header>
+
+</>
+
 
 )
 

@@ -5,12 +5,14 @@ import Loading from "./Loading"
 import {useEffect} from "react"
 import {useContext} from "react"
 import StatementC from "./StatementC"
-import SearchForm from "./SearchForm"
+
+import SearchFormStatement from './SearchFormStatement'
+
 const StatementsList = ()=>{
 
 
 const {statement,loading}= useContext(Context);
-
+console.log(statement);
 
 
 
@@ -23,14 +25,14 @@ if(statement.length<1){
 
     return(
         <>
-<SearchForm/>
+<SearchFormStatement />
 <section className = "section">
     <h2 className= "section-title">statements</h2>
 
-   <div className="statements-center">
+   <div className="cocktails-center">
     {statement.map((s)=>{
         
-       return <StatementC key ={s.member_id} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
+       return <StatementC key ={s.date} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
     })}
 
    </div>
