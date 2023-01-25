@@ -43,7 +43,7 @@ return (
     <NavLink  to ="/affiliation">Party Creed</NavLink>
 </ul>
 <ul className= {styles.link1}>
-    <NavLink  to ="/list">List</NavLink>
+    <NavLink  to ="/statements">Statements</NavLink>
 </ul>
 
 <ul className={styles.link2}>

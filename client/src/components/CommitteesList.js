@@ -43,7 +43,6 @@ if(committ.length<1){
     <h2 className= "section-title">committees</h2>
 
    <div className="cocktails-center">
-    <h1>hello</h1>
     {mappedCommittee()}
     
 

@@ -69,7 +69,7 @@ if(!user) return<Login setUser={setUser} />
   
       <main>
         <Route exact path = "/"></Route>
-        <Route path = "/list">
+        <Route path = "/statements">
          <StatementsList />
         </Route>
         <Route path = "/affiliation">
