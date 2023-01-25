@@ -10,7 +10,7 @@ import {createContext,useState,useEffect} from 'react';
  const ContextProvider = (props) =>{
 
 
-
+const [committ,setCommitt]=useState("house");
   const [loading,setLoading] = useState(true);
   const[query,setQuery] = useState("");
   const [nommy,setNommy]=useState("received")
@@ -49,12 +49,35 @@ import {createContext,useState,useEffect} from 'react';
 
       if(data){
     
-  console.log(data);
+ 
     setNominations(data);
       }
        
     else {
         setNominations([]);
+      }
+      setLoading(false);
+    }catch(error){
+      console.log(error);
+      setLoading(false);
+    }
+  }
+    
+  const fetchCommittee= async () =>{
+    setLoading(true);
+    try {
+      const response = await fetch( `/committee?query=${committ}`)
+     const data = await response.json();
+
+      if(data){
+    
+  console.log(data[0].committees
+    );
+    setCommitt(data[0].committees);
+      }
+       
+    else {
+        setCommitt([]);
       }
       setLoading(false);
     }catch(error){
@@ -69,6 +92,7 @@ import {createContext,useState,useEffect} from 'react';
   useEffect(()=>{
     fetchStatements();
     fetchNominations();
+    fetchCommittee();
   },[query,nommy])
 
 
@@ -133,7 +157,9 @@ import {createContext,useState,useEffect} from 'react';
         statement,
         nominations,
         nommy,
-        setNommy
+        setNommy,
+        committ,
+        setCommitt
       
     }
 return(

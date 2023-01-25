@@ -27,5 +27,10 @@ get "/party/:id", to: "party#partyaffiliation"
   get "/nominations" , to: "nominations#index"
 
   get 'specificnomination', to:"nominations#specific"
+
+
+  get 'committee', to:"committee#index"
+
+  get 'specificcommittee', to:"committee#specific"
   
 end

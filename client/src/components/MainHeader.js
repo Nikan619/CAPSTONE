@@ -56,10 +56,11 @@ return (
     <NavLink  to ="/bills">Billing?!</NavLink>
 </ul>
 <ul className={styles.link4}>
-    <NavLink  to ="/nominations">Nominations</NavLink>
+    <NavLink  to ="/committees">Committees</NavLink>
+    </ul>
     <ul className={styles.link4}>
     <NavLink  to ="/nominationlist">NominationList</NavLink>
-</ul>
+
 </ul>
 </div>
 </nav>

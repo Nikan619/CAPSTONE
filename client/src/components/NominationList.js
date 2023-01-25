@@ -12,7 +12,7 @@ const NominationsList = ()=>{
 const {nominations,loading}= useContext(Context);
 
 
-
+console.log(nominations)
 
 if(loading){
     return <Loading/>

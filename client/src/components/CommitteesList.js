@@ -1,39 +1,52 @@
 
+import {useState} from'react';
+
+
 import React from 'react';
 import { Context } from "../store/auth-context"
 import Loading from "./Loading"
 import {useEffect} from "react"
 import {useContext} from "react"
-import StatementC from "./StatementC"
-
-import SearchFormStatement from './SearchFormStatement'
-
-const StatementsList = ()=>{
 
 
-const {statement,loading}= useContext(Context);
-console.log(statement);
+import CommitteeInputsearch from './CommitteeInputsearch'
+
+const CommitteesList = ()=>{
 
 
+const {committ,loading}= useContext(Context);
+
+
+
+
+
+console.log(committ);
+
+
+// newArray.forEach(function(obj){
+//     delete obj[[Prototype]];
+// });
+
+// console.log(newArray);
 
 if(loading){
     return <Loading/>
 }
-if(statement.length<1){
+if(committ.length<1){
     <h2 className="section-title">No statements matched your search criteria</h2>
 }
 
     return(
         <>
-<SearchFormStatement />
+<CommitteeInputsearch />
 <section className = "section">
     <h2 className= "section-title">statements</h2>
 
    <div className="cocktails-center">
-    {statement.map((s)=>{
-        
-       return <StatementC key ={s.date} party={s.party} url={s.url} date={s.date} title={s.title} id ={s.member_id} name={s.name}/>
-    })}
+    <h1>hello</h1>
+    {/* {newArray.map((data,index) => (
+ <CommitteeC key ={index} data={data} />))} */}
+    
 
    </div>
 </section>
@@ -46,4 +59,4 @@ if(statement.length<1){
     )
 }
 
-export default StatementsList
+export default CommitteesList

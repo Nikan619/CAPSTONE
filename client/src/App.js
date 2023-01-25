@@ -15,7 +15,7 @@ import Bills from "./pages/Bills.js"
 import PartyAffiliation from './pages/PartyAffiliation.js';
 import alanBtn from'@alan-ai/alan-sdk-web'
 import {Context} from './store/auth-context'
-import Nominations from './components/Nominations'
+import CommitteesList from './components/CommitteesList.js'
 import Error from "./pages/Error";
 import StatementsList from "./components/StatementsList"
 import NominationList from "./components/NominationList"
@@ -56,7 +56,7 @@ fetchMe();
 },[]);
 
 
-if(!user) return<Login />
+if(!user) return<Login setUser={setUser} />
 
 
 
@@ -81,8 +81,8 @@ if(!user) return<Login />
       <Route path = "/house" >
         <HouseTrivia  user={user}/>
       </Route>
-      <Route path = "/Nominations" >
-      <Nominations />
+      <Route path = "/committees" >
+      <CommitteesList />
       </Route>
       <Route path = "/NominationList" >
       <NominationList/>
