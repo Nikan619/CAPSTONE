@@ -93,7 +93,7 @@ const [committ,setCommitt]=useState("house");
     fetchStatements();
     fetchNominations();
     fetchCommittee();
-  },[query,nommy])
+  },[query,nommy,committ])
 
 
   

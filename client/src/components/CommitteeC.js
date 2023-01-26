@@ -3,17 +3,17 @@
 
 
 
-function CommitteeC({chair,chair_party,name}){
+function CommitteeC({chair,chairparty,name}){
 
 
     return(
        <article className="cocktail">
         <div className="img-container">
-            <p>Name: {chair}</p>
+            <p>Chair {chair}</p>
         </div>
         <div className='statement-footer'>
             <h3>{name}</h3>
-            <h4>{chair_party}</h4>
+            <h4>{chairparty}</h4>
             
         </div>
         </article>
