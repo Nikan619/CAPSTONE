@@ -6,20 +6,28 @@ import Loading from '../components/Loading';
 
 function SingleNomination ({id}){
 
-
+const [loading,setLoading] = useState(false);
     const [nomination,setNomination]= useState([]);
+
+
     
 useEffect(()=>{
+ 
+ 
     fetch(`/specificnomination?query=${id}`,{
         method: "GET",
         headers: { 'Content-Type': 'application/json'}
     }).then(response => response.json())
     .then(data=>{
         setNomination(data);})
-   
+
+
 },[id])
   
 
+if(loading){
+    return <Loading/>
+}
 
 // console.log(statement.congress);
 

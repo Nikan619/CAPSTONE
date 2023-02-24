@@ -39,17 +39,17 @@ return (
 <header> 
 <nav className ="navbar">
 <div className ='nav-center'>
-<ul className= {styles.link1}>
+<ul className= {styles.link4}>
     <NavLink  to ="/affiliation">Party Creed</NavLink>
 </ul>
-<ul className= {styles.link1}>
+<ul className= {styles.link4}>
     <NavLink  to ="/statements">Statements</NavLink>
 </ul>
 
-<ul className={styles.link2}>
+<ul className={styles.link4}>
     <NavLink  to ="/senators">Your State's Senators!</NavLink>
 </ul>
-<ul className={styles.link3}>
+<ul className={styles.link4}>
     <NavLink  to ="/house">How much do you know about the House?!</NavLink>
 </ul>
 <ul className={styles.link4}>
